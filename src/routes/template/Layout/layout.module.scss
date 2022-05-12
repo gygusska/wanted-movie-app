@@ -1,0 +1,21 @@
+@use '/src/styles/constants/colors';
+@use '/src/styles/constants/levels';
+@use '/src/styles/mixins/flexbox';
+@use '/src/styles/mixins/position';
+
+.wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  overflow-y: auto;
+  background: linear-gradient(135deg, #ff008a, #ff462b);
+
+  .container {
+    position: relative;
+    min-width: 420px;
+    height: 100vh;
+    //background: colors.$BLACK;
+    box-shadow: 0 -1px 10px 0 rgb(0 0 0 / 51%);
+  }
+}
