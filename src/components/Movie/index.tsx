@@ -1,32 +1,25 @@
-import { useMount, useState, useUnmount, useEffect } from 'hooks'
-import { getMovieApi } from '../../services/search'
-import { ISearchAPIRes } from '../../types/search.d'
+import { ISearch } from 'types/search'
+import styles from './movie.module.scss'
 
-const Movie = () => {
-  const [datas, setData] = useState<ISearchAPIRes>()
-  useEffect(() => {
-    getMovieApi({
-      s: 'iron',
-      page: 1,
-    }).then((res) => {
-      setData(res.data)
-    })
-  }, [])
+// 인자가 props로 와서 props에 대한 정의를 해줘야함
+interface IMovieProps {
+  movie: ISearch
+}
 
-  if (!datas) return null
-
+const Movie = ({ movie }: IMovieProps) => {
   return (
-    <div>
-      <div>
-        이미지
-        {/* <img src="" alt="" /> */}
+    <li className={styles.movieFlex}>
+      <div className={styles.movieImg}>
+        <img src={movie.Poster} alt={movie.Title} />
       </div>
-      <div>
-        <h3>{datas.Search?.[0].Title}</h3>
-        <p>연도, 타입</p>
+      <div className={styles.movieInfo}>
+        <h3>{movie.Title}</h3>
+        <p>
+          연도 : {movie.Year}, 타입 : {movie.Type}
+        </p>
         <p>즐겨찾기 유무</p>
       </div>
-    </div>
+    </li>
   )
 }
 

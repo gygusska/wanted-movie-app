@@ -4,18 +4,18 @@
 @use '/src/styles/mixins/position';
 
 .wrap {
-  display: flex;
-  align-items: center;
-  justify-content: center;
   height: 100vh;
+  min-height: 100vh;
   overflow-y: auto;
   background: linear-gradient(135deg, #ff008a, #ff462b);
 
   .container {
     position: relative;
+    width: 420px;
     min-width: 420px;
-    height: 100vh;
-    //background: colors.$BLACK;
+    padding-bottom: 70px;
+    margin: 0 auto;
+    background: colors.$BLACK;
     box-shadow: 0 -1px 10px 0 rgb(0 0 0 / 51%);
   }
 }
