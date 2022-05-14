@@ -2,6 +2,8 @@
 
 검색,즐겨찾기 기능이 있는 영화앱
 
+https://gygusska.github.io/wanted-movie-app
+
 ## 기술스택
 
 TypeScript, React, Sass, Recoil
