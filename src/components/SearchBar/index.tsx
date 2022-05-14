@@ -13,7 +13,10 @@ const SearchBar = () => {
 
   const handleSubmit = (e?: FormEvent<HTMLFormElement>) => {
     e?.preventDefault()
-    if (!title) return
+    if (!title) {
+      alert('검색어를 입력해주세요')
+      return
+    }
 
     setSearchParams({ s: title })
     // resetMovieList()

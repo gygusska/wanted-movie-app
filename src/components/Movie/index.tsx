@@ -5,6 +5,7 @@ import { useRecoilState } from 'recoil'
 import { bookmarkList } from 'states/movie'
 import { ISearch } from 'types/search'
 import styles from './movie.module.scss'
+import grip from '../../assets/png/grip_logo.png'
 
 // 인자가 props로 와서 props에 대한 정의를 해줘야함
 interface IMovieProps {
@@ -28,7 +29,7 @@ const Movie = ({ movie }: IMovieProps) => {
     <>
       <li className={styles.movieFlex} onClick={handleClick} role='presentation'>
         <div className={styles.movieImg}>
-          <img src={movie.Poster} alt={movie.Title} />
+          {movie.Poster ? <img src={movie.Poster} alt={movie.Title} /> : <img src={grip} alt={movie.Title} />}
         </div>
         <div className={styles.movieInfo}>
           <h3>{movie.Title}</h3>
