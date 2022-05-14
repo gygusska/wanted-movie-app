@@ -1,5 +1,5 @@
 import { Routes, Route } from 'react-router-dom'
-import SearchList from './SearchList'
+import SearchList from './SearchPage'
 import BookmarkList from './BookmarkList'
 import Layout from './template/Layout'
 

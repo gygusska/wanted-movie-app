@@ -1,3 +1,8 @@
+import MovieModal from 'components/MovieModal'
+import ModalPortal from 'components/MovieModal/modalPortal'
+import { useState } from 'react'
+import { useRecoilState } from 'recoil'
+import { bookmarkList } from 'states/movie'
 import { ISearch } from 'types/search'
 import styles from './movie.module.scss'
 
@@ -7,19 +12,37 @@ interface IMovieProps {
 }
 
 const Movie = ({ movie }: IMovieProps) => {
+  const [isOpenModal, setIsOpenModal] = useState(false)
+  const [bookmarkedList] = useRecoilState(bookmarkList)
+  const isBookmarked = !!bookmarkedList.find((markedItem) => markedItem.imdbID === movie.imdbID)
+
+  const handleClick = () => {
+    setIsOpenModal(true)
+  }
+
+  const handleModalClose = () => {
+    setIsOpenModal(false)
+  }
+
   return (
-    <li className={styles.movieFlex}>
-      <div className={styles.movieImg}>
-        <img src={movie.Poster} alt={movie.Title} />
-      </div>
-      <div className={styles.movieInfo}>
-        <h3>{movie.Title}</h3>
-        <p>
-          연도 : {movie.Year}, 타입 : {movie.Type}
-        </p>
-        <p>즐겨찾기 유무</p>
-      </div>
-    </li>
+    <>
+      <li className={styles.movieFlex} onClick={handleClick} role='presentation'>
+        <div className={styles.movieImg}>
+          <img src={movie.Poster} alt={movie.Title} />
+        </div>
+        <div className={styles.movieInfo}>
+          <h3>{movie.Title}</h3>
+          <p>
+            연도 : {movie.Year}, 타입 : {movie.Type}
+          </p>
+          {isBookmarked && <p>즐겨찾기</p>}
+        </div>
+      </li>
+
+      <ModalPortal>
+        {isOpenModal && <MovieModal searchItem={movie} setIsModal={handleModalClose} isBookmarked={isBookmarked} />}
+      </ModalPortal>
+    </>
   )
 }
 

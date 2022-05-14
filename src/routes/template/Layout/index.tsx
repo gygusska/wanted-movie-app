@@ -1,13 +1,11 @@
 import { Outlet } from 'react-router-dom'
+import LNB from 'routes/_shared/LNB'
 import styles from './layout.module.scss'
-import LNB from '../../_shared/LNB'
-import Header from '../../_shared/Header'
 
 const Layout = () => {
   return (
     <div className={styles.wrap}>
       <div className={styles.container}>
-        <Header />
         <Outlet />
         <LNB />
       </div>

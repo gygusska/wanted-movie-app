@@ -2,3 +2,30 @@
 @use '/src/styles/constants/levels';
 @use '/src/styles/mixins/flexbox';
 @use '/src/styles/mixins/position';
+
+.searchBarWrap {
+  height: 60px;
+  line-height: 60px;
+
+  .searchBarFixed {
+    @include position.posCenterX(fixed);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 420px;
+    height: 60px;
+    line-height: 60px;
+    background: #000000;
+
+    .searchInput {
+      flex-basis: 350px;
+      padding: 7px 10px;
+      color: #ffffff;
+      background-color: #1e1e1e;
+    }
+
+    .searchBtn {
+      color: #ffffff;
+    }
+  }
+}
