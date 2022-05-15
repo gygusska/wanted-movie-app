@@ -9,6 +9,7 @@
 
   .searchBarFixed {
     @include position.posCenterX(fixed);
+    z-index: 1;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -18,14 +19,16 @@
     background: #000000;
 
     .searchInput {
-      flex-basis: 350px;
-      padding: 7px 10px;
+      flex-basis: 300px;
+      padding: 10px;
       color: #ffffff;
       background-color: #1e1e1e;
     }
 
     .searchBtn {
+      padding: 12px;
       color: #ffffff;
+      background-color: #1e1e1e;
     }
   }
 }

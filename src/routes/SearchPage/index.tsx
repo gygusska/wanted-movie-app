@@ -12,18 +12,15 @@ import styles from './searchList.module.scss'
 
 const SearchPage = () => {
   const [searchParams] = useSearchParams()
-  // const [data, setData] = useState<ISearchAPIRes>()
-  const [movie, setMovieList] = useRecoilState(searchMovieList)
-  const [title, setTitle] = useState<string>(searchParams.get('s') ?? '')
-  const movieList = useRecoilValue(searchMovieList)
+  const [search, setSearchList] = useRecoilState(searchMovieList)
   const currentSearch = searchParams.get('s') ?? ''
 
   const getMovieList = useCallback(() => {
     if (!currentSearch) return
     getMovieApi({ s: currentSearch, page: 1 }).then((res) => {
-      setMovieList(res.data.Search)
+      setSearchList(res.data.Search)
     })
-  }, [currentSearch, setMovieList])
+  }, [currentSearch, setSearchList])
 
   useMount(() => {
     if (!currentSearch) return
@@ -40,11 +37,11 @@ const SearchPage = () => {
         <SearchBar />
       </header>
       <main>
-        {movieList ? (
+        {search ? (
           <ul>
-            {movieList.map((data, idx) => (
+            {search.map((data, idx) => (
               // eslint-disable-next-line react/no-array-index-key
-              <Movie key={`movie-${data.imdbID}-${idx}`} movie={data} />
+              <Movie key={`search-${data.imdbID}-${idx}`} movie={data} />
             ))}
           </ul>
         ) : (

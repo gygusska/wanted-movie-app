@@ -1,9 +1,7 @@
-@use '/src/styles/constants/colors';
-@use '/src/styles/constants/levels';
-@use '/src/styles/mixins/flexbox';
 @use '/src/styles/mixins/position';
 
 .movieFlex {
+  position: relative;
   box-sizing: border-box;
   display: flex;
   align-items: center;
@@ -38,6 +36,17 @@
 
     p {
       color: #888888;
+    }
+
+    .bookmarkIcon {
+      position: absolute;
+      top: 10px;
+      right: 30px;
+      font-size: 28px;
+    }
+
+    .isBookmarked {
+      color: yellow;
     }
   }
 }
