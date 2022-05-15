@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/wanted-movie-app/static/css/main.18461de5.css",
-    "main.js": "/wanted-movie-app/static/js/main.91448ba6.js",
+    "main.css": "/wanted-movie-app/static/css/main.a9888694.css",
+    "main.js": "/wanted-movie-app/static/js/main.de762a8b.js",
     "static/js/787.68ea1acb.chunk.js": "/wanted-movie-app/static/js/787.68ea1acb.chunk.js",
     "static/media/grip_logo.png": "/wanted-movie-app/static/media/grip_logo.278cb0102f71c9aacf6d.png",
     "index.html": "/wanted-movie-app/index.html",
-    "main.18461de5.css.map": "/wanted-movie-app/static/css/main.18461de5.css.map",
-    "main.91448ba6.js.map": "/wanted-movie-app/static/js/main.91448ba6.js.map",
+    "main.a9888694.css.map": "/wanted-movie-app/static/css/main.a9888694.css.map",
+    "main.de762a8b.js.map": "/wanted-movie-app/static/js/main.de762a8b.js.map",
     "787.68ea1acb.chunk.js.map": "/wanted-movie-app/static/js/787.68ea1acb.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.18461de5.css",
-    "static/js/main.91448ba6.js"
+    "static/css/main.a9888694.css",
+    "static/js/main.de762a8b.js"
   ]
 }
