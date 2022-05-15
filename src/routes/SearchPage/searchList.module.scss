@@ -2,3 +2,8 @@
 @use '/src/styles/constants/levels';
 @use '/src/styles/mixins/flexbox';
 @use '/src/styles/mixins/position';
+
+.noSearch {
+  @include position.middleBox;
+  color: #ffffff;
+}

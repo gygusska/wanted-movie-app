@@ -5,7 +5,6 @@ import { useCallback, useEffect, useState } from 'react'
 import { useSearchParams } from 'react-router-dom'
 import { useMount, useUpdateEffect } from 'react-use'
 import { useRecoilState, useRecoilValue } from 'recoil'
-import LNB from 'routes/_shared/LNB'
 import { getMovieApi } from 'services/search'
 import { searchMovieList } from 'states/movie'
 import styles from './searchList.module.scss'
@@ -37,7 +36,7 @@ const SearchPage = () => {
         <SearchBar />
       </header>
       <main>
-        {search ? (
+        {currentSearch ? (
           <ul>
             {search.map((data, idx) => (
               // eslint-disable-next-line react/no-array-index-key
@@ -45,7 +44,7 @@ const SearchPage = () => {
             ))}
           </ul>
         ) : (
-          <h2>검색 결과가 없습니다.</h2>
+          <h2 className={styles.noSearch}>검색 결과가 없습니다.</h2>
         )}
       </main>
     </>
