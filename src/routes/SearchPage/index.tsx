@@ -41,7 +41,7 @@ const SearchPage = () => {
           <ul>
             {search.map((data, idx) => (
               // eslint-disable-next-line react/no-array-index-key
-              <Movie key={`movie-${data.imdbID}-${idx}`} movie={data} />
+              <Movie key={`search-${data.imdbID}-${idx}`} movie={data} />
             ))}
           </ul>
         ) : (

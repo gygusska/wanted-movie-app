@@ -4,7 +4,7 @@ import { useRecoilState } from 'recoil'
 import { bookmarkList } from 'states/movie'
 import styles from './bookmark.module.scss'
 
-const BookmarkList = () => {
+const BookmarkPage = () => {
   const [bookmarkedList] = useRecoilState(bookmarkList)
 
   return (
@@ -27,4 +27,4 @@ const BookmarkList = () => {
   )
 }
 
-export default BookmarkList
+export default BookmarkPage

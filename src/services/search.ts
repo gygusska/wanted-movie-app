@@ -1,7 +1,7 @@
 import { axios } from 'hooks/worker'
 import { ISearchAPIRes } from 'types/search.d'
 
-const WEATHER_BASE_URL = 'http://www.omdbapi.com/?apikey=1740db25'
+const WEATHER_BASE_URL = 'https://www.omdbapi.com/?apikey=1740db25'
 
 const appkey = '1740db25'
 

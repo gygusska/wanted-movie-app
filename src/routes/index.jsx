@@ -1,17 +1,17 @@
 import { Routes, Route } from 'react-router-dom'
-import SearchList from './SearchPage'
-import BookmarkList from './BookmarkList'
+import SearchPage from './SearchPage'
+import BookmarkPage from './BookmarkPage'
 import Layout from './template/Layout'
 
 const App = () => {
   return (
     <Routes>
       <Route element={<Layout />}>
-        <Route path='/' element={<SearchList />} />
-        <Route path='search' element={<SearchList />}>
-          <Route path=':movie' element={<SearchList />} />
+        <Route path='/' element={<SearchPage />} />
+        <Route path='search' element={<SearchPage />}>
+          <Route path=':movie' element={<SearchPage />} />
         </Route>
-        <Route path='bookmark' element={<BookmarkList />} />
+        <Route path='bookmark' element={<BookmarkPage />} />
       </Route>
     </Routes>
   )
